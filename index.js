@@ -9,6 +9,7 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 client.once('ready', () => {
 	console.log('Ready!');
 });
+
 // Slash Commands Moment
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;

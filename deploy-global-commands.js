@@ -3,9 +3,8 @@ const { REST } = require('@discordjs/rest');
 const { clientId, guildId, token } = require('./config.json');
 //this part of the code makes the commands visible on the guild server, a bit of code editing should make it go globle, but it can have a delay of up to one hour
 const commands = [
-    new SlashCommandBuilder().setName('interactiontest').setDescription('A test for string passthough').addStringOption(option => option.setName('textinput').setDescription('with any luck it will return what you type here back at you').setRequired(true)),
-    new SlashCommandBuilder().setName('ping').setDescription('Replies with Pong!'),
     new SlashCommandBuilder().setName('sacramento').setDescription('Replies with a fact about Sacramento (source Wikipedia, AI) (it might not be true tho)'),
+    new SlashCommandBuilder().setName('advice').setDescription('Replies with wonderful advice'),
 ]
 	.map(command => command.toJSON());
 

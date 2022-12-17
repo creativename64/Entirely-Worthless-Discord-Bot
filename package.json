@@ -1,5 +1,5 @@
 {
-  "name": "jerryscript",
+  "name": "worthless-discord-bot",
   "version": "1.0.0",
   "description": "a rewrite of jerry/kaitlyn to use javascript",
   "main": "index.js",
@@ -12,5 +12,13 @@
     "@discordjs/rest": "^1.0.0",
     "discord.js": "^14.0.3",
     "openai": "^3.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creativename64/Entirely-Worthless-Discord-Bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/creativename64/Entirely-Worthless-Discord-Bot/issues"
+  },
+  "homepage": "https://github.com/creativename64/Entirely-Worthless-Discord-Bot#readme"
 }

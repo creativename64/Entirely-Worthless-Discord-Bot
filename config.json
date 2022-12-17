@@ -1,5 +1,0 @@
-{
-    "clientId": "bot application id",
-	"guildId": "the id of your dev server, no goloble commands atm",
-	"token": "bot token"
-}

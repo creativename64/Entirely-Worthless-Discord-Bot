@@ -159,18 +159,59 @@ client.on('interactionCreate', async interaction => {
 		await interaction.reply(`the user asked for help with "${solvething}", all I can say is: ${textArray2[randomNumber2]}`);
 	} else if (commandName === 'headlines') {
 		const starttext = [
-			'sh',
-			'sh',
+			'breaking:',
+			'analysis:',
+			'editorial:',
+			' ',
 		];
 		var solvethingnumber = Math.floor(Math.random()*starttext.length);
 		const subject = [
-			'ah',
-			'ah',
+			'florda man',
+'donald trump',
+'elon musk',
+'donald trump',
+'OpenAI',
+'random person we found on the street',
+'house of commons',
+'darrell',
+'kanye west',
+'scientists',
+'NASA',
+'a cute cat',
+'some random cat',
+'jeff bezos',
+
 		];
 		var subjectnumber = Math.floor(Math.random()*subject.length)
 		const endingthing = [
-			'ah',
-			'ah',
+			'broke into the local target',
+'made housing prices spiral out of control',
+'said something bad (boooooooo)',
+'has doomed the entire world',
+'said time is an illusion',
+'broke a multi-million dollar telescope',
+'wrote a new dictionary, and we hate it',
+'sold a pair of old shoes they used for $150k on ebay',
+'died due to licking a toad',
+'was attacked by an owl twice',
+'was caught cheeting on their partner',
+'faked a pregnency for free time off',
+'ate too many beans and was sent to the hospital',
+'did your mom',
+'was arrested after trying to buy a child in a store',
+'was reloacted after the locals complained',
+'was given 9 life sentences for being a mass murderer',
+'won a jump-rope world record',
+'was outlasted by a peice of lettus, partner disapointed',
+'straped a fan to themselves to get away from the weather',
+'was killed by something they had said was a punishment from god for being gay',
+'just curled up for a wee lil nap',
+'got a speices of moth named after them',
+'was AI',
+'discovered their parter was trans and they never realized',
+'was arrested for selling tickets to heaven',
+'keeps returning to a store they are banned from',
+
 		] ;
 		var endingthingnumber = Math.floor(Math.random()*endingthing.length);
 		await interaction.reply(`${starttext[solvethingnumber]} ${subject[subjectnumber]} ${endingthing[endingthingnumber]}`);

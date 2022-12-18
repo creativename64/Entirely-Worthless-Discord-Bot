@@ -157,6 +157,23 @@ client.on('interactionCreate', async interaction => {
 		var randomNumber2 = Math.floor(Math.random()*textArray2.length);
     const solvething = interaction.options.getString('problem');
 		await interaction.reply(`the user asked for help with "${solvething}", all I can say is: ${textArray2[randomNumber2]}`);
+	} else if (commandName === 'headlines') {
+		const starttext = [
+			'sh',
+			'sh',
+		];
+		var solvethingnumber = Math.floor(Math.random()*starttext.length);
+		const subject = [
+			'ah',
+			'ah',
+		];
+		var subjectnumber = Math.floor(Math.random()*subject.length)
+		const endingthing = [
+			'ah',
+			'ah',
+		] ;
+		var endingthingnumber = Math.floor(Math.random()*endingthing.length);
+		await interaction.reply(`${starttext[solvethingnumber]} ${subject[subjectnumber]} ${endingthing[endingthingnumber]}`);
 	}
 });
 

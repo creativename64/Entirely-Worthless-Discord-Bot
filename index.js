@@ -1,6 +1,11 @@
 // Require the necessary discord.js classes
 const { Client, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
+const https = require('https');
+const cheerio = require('cheerio');
+const { EmbedBuilder } = require('discord.js');
+const { ActionRowBuilder, ButtonBuilder, ButtonStyle, Events } = require('discord.js');
+const { url } = require('inspector');
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -215,7 +220,22 @@ client.on('interactionCreate', async interaction => {
 		] ;
 		var endingthingnumber = Math.floor(Math.random()*endingthing.length);
 		await interaction.reply(`${starttext[solvethingnumber]} ${subject[subjectnumber]} ${endingthing[endingthingnumber]}`);
-	}
+	} else if (commandName === 'ao3') {
+	var a = Math.floor(Math.random()*10194969);
+	const ficurl = (`https://archiveofourown.org/works/${a}`)
+	const exampleEmbed = new EmbedBuilder()
+	.setColor(0x0099FF)
+	.setTitle('Random AO3 Article (This embed is still WIP)')
+	.setAuthor({ name: 'darrell', iconURL: 'https://cdn.discordapp.com/avatars/1054064658962726962/408135e68d06ca55718b053472e70be1.webp?size=160', url: 'https://discord.com/api/oauth2/authorize?client_id=1053733415888891915&permissions=517611116608&scope=applications.commands%20bot' });
+	const row = new ActionRowBuilder()
+			.addComponents(
+				new ButtonBuilder()
+					.setLabel('Thy fic')
+					.setURL(ficurl)
+    				.setStyle('Link'),
+			);
+    interaction.reply({embeds: [exampleEmbed], components: [row]});
+}
 });
 
 // Login to Discord with your client's token

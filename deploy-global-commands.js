@@ -5,7 +5,6 @@ const { clientId, guildId, token } = require('./config.json');
 const commands = [
     new SlashCommandBuilder().setName('sacramento').setDescription('Replies with a fact about Sacramento (source Wikipedia, AI) (it might not be true tho)'),
     new SlashCommandBuilder().setName('advice').setDescription('Replies with wonderful advice').addStringOption(option => option.setName('problem') .setDescription('the problem you need solving') .setRequired(true)),
-	new SlashCommandBuilder().setName('headliine').setDescription('Generates a fake headline'),
 ]
 	.map(command => command.toJSON());
 

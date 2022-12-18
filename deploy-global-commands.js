@@ -4,7 +4,7 @@ const { clientId, guildId, token } = require('./config.json');
 //this part of the code makes the commands visible on the guild server, a bit of code editing should make it go globle, but it can have a delay of up to one hour
 const commands = [
     new SlashCommandBuilder().setName('sacramento').setDescription('Replies with a fact about Sacramento (source Wikipedia, AI) (it might not be true tho)'),
-    new SlashCommandBuilder().setName('advice').setDescription('Replies with wonderful advice'),
+    new SlashCommandBuilder().setName('advice').setDescription('Replies with wonderful advice').addStringOption(option => option.setName('problem') .setDescription('the problem you need solving') .setRequired(true)),
 ]
 	.map(command => command.toJSON());
 

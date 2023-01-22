@@ -13,9 +13,6 @@ app.get('/', (req, res) => res.send('Hello World!'));
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
 
-
-// Require the necessary discord.js classes
-const { Client, GatewayIntentBits } = require('discord.js');
 const dotenv = require('dotenv')
 
 // Create a new client instance
@@ -232,6 +229,7 @@ client.on('interactionCreate', async interaction => {
 		var endingthingnumber = Math.floor(Math.random()*endingthing.length);
 		await interaction.reply(`${starttext[solvethingnumber]} ${subject[subjectnumber]} ${endingthing[endingthingnumber]}`);
 	} else if (commandName === 'ao3') {
+		interaction.reply('finding a link, this can take a weirdly long time')
 		async function getUrl(interaction) {
 			return new Promise((resolve, reject) => {
 				let exit = false;
@@ -252,7 +250,7 @@ client.on('interactionCreate', async interaction => {
 			});
 		}
 		
-		getUrl().then(url => interaction.reply(url));
+		getUrl().then(url => interaction.editReply(url));
 		
 } else if (commandName === '8-ball') {
 		const textArray3 = [
@@ -280,7 +278,7 @@ client.on('interactionCreate', async interaction => {
 		var randomNumber3 = Math.floor(Math.random()*textArray3.length);
 		await interaction.reply(textArray3[randomNumber3]);
 	} else if (commandName === 'sorry-darrell') {
-		await interaction.reply('I would like to apologize on behalf of myself dor selecting darrell as the subject of mockery via this bot, he is quite bassed and is working to ban guns in the states and stuff. Please dont use this bot as a political statement and the next time I pick a random cishet white male mayor to mock I will be sure to make sure they kinda suck.');
+		await interaction.reply('I would like to apologize on behalf of myself for selecting darrell as the subject of mockery via this bot, he is quite bassed and is working to ban guns in the states and stuff. Please dont use this bot as a political statement and the next time I pick a random cishet white male mayor to mock I will be sure to make sure they kinda suck.');
 	}
 });
 

@@ -6,6 +6,18 @@ const cheerio = require('cheerio');
 const { EmbedBuilder } = require('discord.js');
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle, Events } = require('discord.js');
 const { url } = require('inspector');
+const express = require('express');
+const app = express();
+const port = 3000;
+app.get('/', (req, res) => res.send('Hello World!'));
+
+app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
+
+
+// Require the necessary discord.js classes
+const { Client, GatewayIntentBits } = require('discord.js');
+const dotenv = require('dotenv')
+
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 

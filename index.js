@@ -276,7 +276,8 @@ client.on('interactionCreate', async interaction => {
 			'very doubtful',
 		];
 		var randomNumber3 = Math.floor(Math.random()*textArray3.length);
-		await interaction.reply(textArray3[randomNumber3]);
+		const solvething2 = interaction.options.getString('problem');
+		await interaction.reply(`the user asked "${solvething2}", the spirits say: ${textArray3[randomNumber3]}`);
 	} else if (commandName === 'sorry-darrell') {
 		await interaction.reply('I would like to apologize on behalf of myself for selecting darrell as the subject of mockery via this bot, he is quite bassed and is working to ban guns in the states and stuff. Please dont use this bot as a political statement and the next time I pick a random cishet white male mayor to mock I will be sure to make sure they kinda suck.');
 	}

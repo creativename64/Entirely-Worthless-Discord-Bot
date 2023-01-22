@@ -6,7 +6,7 @@ const commands = [
     new SlashCommandBuilder().setName('sacramento').setDescription('Replies with a fact about Sacramento (source Wikipedia, AI) (it might not be true tho)'),
     new SlashCommandBuilder().setName('advice').setDescription('Replies with wonderful advice').addStringOption(option => option.setName('problem') .setDescription('the problem you need solving') .setRequired(true)),
 	new SlashCommandBuilder().setName('headline').setDescription('random headline'),
-	new SlashCommandBuilder().setName('8-ball').setDescription('random 8-ball response'),
+	new SlashCommandBuilder().setName('8-ball').setDescription('random 8-ball response').addStringOption(option => option.setName('problem') .setDescription('the problem you need solving') .setRequired(true)),
 	new SlashCommandBuilder().setName('sorry-darrell').setDescription('prints out an apology to darrell'),
 	new SlashCommandBuilder().setName('ao3').setDescription('random ao3 fic'),
 ]

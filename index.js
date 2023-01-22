@@ -6,7 +6,6 @@ const cheerio = require('cheerio');
 const { EmbedBuilder } = require('discord.js');
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle, Events } = require('discord.js');
 const { url } = require('inspector');
-
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -221,21 +220,56 @@ client.on('interactionCreate', async interaction => {
 		var endingthingnumber = Math.floor(Math.random()*endingthing.length);
 		await interaction.reply(`${starttext[solvethingnumber]} ${subject[subjectnumber]} ${endingthing[endingthingnumber]}`);
 	} else if (commandName === 'ao3') {
-	var a = Math.floor(Math.random()*10194969);
-	const ficurl = (`https://archiveofourown.org/works/${a}`)
-	const exampleEmbed = new EmbedBuilder()
-	.setColor(0x0099FF)
-	.setTitle('Random AO3 Article (This embed is still WIP)')
-	.setAuthor({ name: 'darrell', iconURL: 'https://cdn.discordapp.com/avatars/1054064658962726962/408135e68d06ca55718b053472e70be1.webp?size=160', url: 'https://discord.com/api/oauth2/authorize?client_id=1053733415888891915&permissions=517611116608&scope=applications.commands%20bot' });
-	const row = new ActionRowBuilder()
-			.addComponents(
-				new ButtonBuilder()
-					.setLabel('Thy fic')
-					.setURL(ficurl)
-    				.setStyle('Link'),
-			);
-    interaction.reply({embeds: [exampleEmbed], components: [row]});
-}
+		async function getUrl(interaction) {
+			return new Promise((resolve, reject) => {
+				let exit = false;
+				let check = () => {
+					if (!exit) {
+						let a = Math.floor(Math.random() * 42000000) + 1;
+						let x = "https://archiveofourown.org/works/" + a;
+						https.get(x, (res) => {
+							if (res.statusCode === 200) {
+								resolve(x);
+								exit = true;
+							}
+						});
+						setTimeout(check, 1000);
+					}
+				}
+				check();
+			});
+		}
+		
+		getUrl().then(url => interaction.reply(url));
+		
+} else if (commandName === '8-ball') {
+		const textArray3 = [
+			'it is certain',
+			'it is decidedly so',
+			'without a doubt',
+			'yes definitely',
+			'you may rely on it',
+			'as i see it, yes',
+			'most likely',
+			'outlook good',
+			'yes',
+			'signs point to yes',
+			'reply hazy try again',
+			'ask again later',
+			'better not tell you now',
+			'cannot predict now',
+			'concentrate and ask again',
+			'dont count on it',
+			'my reply is no',
+			'my sources say no',
+			'outlook not so good',
+			'very doubtful',
+		];
+		var randomNumber3 = Math.floor(Math.random()*textArray3.length);
+		await interaction.reply(textArray3[randomNumber3]);
+	} else if (commandName === 'sorry-darrell') {
+		await interaction.reply('I would like to apologize on behalf of myself dor selecting darrell as the subject of mockery via this bot, he is quite bassed and is working to ban guns in the states and stuff. Please dont use this bot as a political statement and the next time I pick a random cishet white male mayor to mock I will be sure to make sure they kinda suck.');
+	}
 });
 
 // Login to Discord with your client's token

@@ -21,6 +21,7 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 // When the client is ready, run this code (only once)
 client.once('ready', () => {
 	console.log('Ready!');
+	client.user.setActivity(`you can dm me | version 2.2`);
 });
 
 // Slash Commands Moment

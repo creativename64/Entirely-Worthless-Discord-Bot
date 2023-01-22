@@ -5,11 +5,7 @@ const { clientId, guildId, token } = require('./config.json');
 const commands = [
     new SlashCommandBuilder().setName('interactiontest').setDescription('A test for string passthough (beta)').addStringOption(option => option.setName('textinput').setDescription('with any luck it will return what you type here back at you').setRequired(true)),
     new SlashCommandBuilder().setName('ping').setDescription('Replies with Pong! (beta)'),
-	new SlashCommandBuilder().setName('ao3').setDescription('random ao3 fic (beta)'),
 	new SlashCommandBuilder().setName('spotify').setDescription('random spotify song (beta)'),
-	new SlashCommandBuilder().setName('headline').setDescription('random headline (beta)'),
-	new SlashCommandBuilder().setName('8-ball').setDescription('random 8-ball response (beta)'),
-	new SlashCommandBuilder().setName('sorry-darrell').setDescription('prints out an apology to darrell (beta)'),
 ]
 	.map(command => command.toJSON());
 

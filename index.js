@@ -102,6 +102,19 @@ client.on('interactionCreate', async interaction => {
 			'Official records for Sacramento were kept exclusively at the airport since 10 November 1941.',
 			'Most of the citys records were destroyed in the 2008 California wildfires',
 			'Most of these facts are wrong',
+			'There is a large collection of tunnels under the foundation of Sacramento',
+			'The Sacrmento Kings use a real lion as a mascot',
+			'Mark Twain lived there once',
+			'They spent $68 million renovating the state building once',
+			'It was called sactown once',
+			'IT IS THE BIG TOMATO',
+			'They process 12 million pounds of nuts a day',
+			'The statie library is haunted',
+			'Sacramento has seven orchestras',
+			'West Sacramento is in YOLO county while Sacramento is in Sacramento County',
+			
+			
+			
 
 
 		];
@@ -177,6 +190,8 @@ client.on('interactionCreate', async interaction => {
 			'analysis:',
 			'editorial:',
 			' ',
+			' ',
+			' ',
 		];
 		var solvethingnumber = Math.floor(Math.random()*starttext.length);
 		const subject = [
@@ -185,7 +200,7 @@ client.on('interactionCreate', async interaction => {
 'elon musk',
 'donald trump',
 'OpenAI',
-'random person we found on the street',
+'this random person we found on the street',
 'house of commons',
 'darrell',
 'kanye west',

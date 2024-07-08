@@ -1,6 +1,5 @@
 // Require the necessary discord.js classes
 const { Client, GatewayIntentBits } = require('discord.js');
-const { token } = require('./config.json');
 const https = require('https');
 const cheerio = require('cheerio');
 const { EmbedBuilder } = require('discord.js');
@@ -9,11 +8,11 @@ const { url } = require('inspector');
 const express = require('express');
 const app = express();
 const port = 3000;
+const dotenv = require('dotenv');
+dotenv.config();
 app.get('/', (req, res) => res.send('Hello World!'));
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
-
-const dotenv = require('dotenv')
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -180,6 +179,74 @@ client.on('interactionCreate', async interaction => {
   'sacrifice a goat',
   'sacramentos a good place to live',
   'canada should be a state',
+  "Channel your inner MacGyver and build a solution out of random office supplies",
+"Maybe the real problem was the friends we made along the way",
+"Treat yourself to a reward for even attempting to deal with this!",
+"Pro-tip: Problems shrink when you view them from the comfort of a hammock",
+"Did someone say dance break? Distract yourself with some epic moves!",
+"Bake a delicious cake and celebrate that you're at least acknowledging the problem",
+"Marie Kondo your worries: Does this problem spark joy? If not, ditch it!",
+"Challenge yourself to explain the problem to a rubber duck. Clarity might come quacking in",
+"Netflix and chill... but with a problem-solving documentary thrown in for good measure",
+"Fake it 'til you make it! Project confidence and the problem might just shrink away",
+"Channel your inner superhero and conquer this obstacle with a flick of your metaphorical cape!",
+"Maybe the problem needs a hug? Kindness can be surprisingly effective",
+"Write a letter to your future self about this problem. Future you will laugh (or have solved it already)",
+"Is there a karaoke bar nearby? Belting out your frustrations might be surprisingly therapeutic",
+"Problem-solving power nap! Recharge and come back feeling refreshed and ready to tackle it",
+"Make a list of things you're grateful for. Gratitude can shift your perspective and boost problem-solving skills",
+"Flip the script! How can you turn this problem into an opportunity?",
+"Break the problem down into tiny, manageable steps. You've got this!",
+"Time for a brain dump! Write down everything about the problem, no matter how crazy it seems. Clarity might emerge",
+"Maybe a walk in nature is the answer. Fresh air and sunshine can work wonders",
+"Talk it out with a trusted friend or mentor. A listening ear can be surprisingly helpful",
+"Visualize success! Imagine yourself overcoming the problem and feeling proud. Positive visualization is powerful",
+"Delegate! Can you share some of the burden with someone else?",
+"Learn from your mistakes. Every challenge is a chance to grow",
+"Focus on what you can control. Let go of the rest and breathe easy",
+"Channel your inner artist and create something inspired by the problem. Maybe the solution lies within the art form!",
+"Declutter your physical space. A clean environment can lead to a clearer mind for problem-solving.",
+"Blast some empowering music and get pumped up to tackle this challenge!",
+"Fake a British accent and pretend you're a brilliant detective solving the case of... your problem!",
+"Maybe laughter is the best medicine? Watch a funny movie and come back to it with a fresh perspective.",
+"Do a quick online meditation session. A few minutes of mindfulness can work wonders for focus and clarity.",
+"Organize a brainstorming session with friends or colleagues. Multiple minds are better than one!",
+"Channel your inner negotiator and see if you can find a win-win solution for everyone involved.",
+"Sometimes the best solution is simply waiting. Give yourself some time and space to let it simmer.",
+"Light a scented candle and create a calming atmosphere to approach the problem with a cool head.",
+"Do some jumping jacks! Get your blood pumping and see if some creative problem-solving ideas come to mind.",
+"Write down your worries on a piece of paper, then crumple it up and throw it away. Symbolically letting go of the stress.",
+"Challenge yourself to learn something new that might be related to the problem. Knowledge is power!",
+"Maybe the answer lies in a good night's sleep. A well-rested brain is a problem-solving machine.",
+"Practice gratitude for the small things in life. A positive mindset can help you approach challenges with a better outlook.",
+"Do a quick online personality test. Maybe understanding yourself better offers clues to tackling the problem.",
+"Organize your workspace. A cluttered desk can lead to a cluttered mind. Tidy up and see if inspiration strikes.",
+"Maybe the solution involves helping someone else. Sometimes giving back can bring unexpected clarity.",
+"Listen to a podcast on a related topic. You might learn a new approach or gain valuable insights.",
+"Do some stretches or light yoga. A relaxed body can lead to a more relaxed mind for problem-solving.",
+"Challenge yourself to explain the problem to a pet (even if they don't respond). Talking it out can bring clarity.",
+"Maybe the answer lies in a good book. Dive into a non-fiction book related to the issue and see what you learn.",
+"Practice positive affirmations. Repeating things like 'I am capable' or 'I can handle this' can boost confidence.",
+"Reward yourself for small victories along the way. Celebrate your progress, no matter how small.",
+"Sometimes a change of scenery is all you need. Take a walk in a new park or visit a different coffee shop.",
+"Listen to calming nature sounds. The sounds of rain or waves can be surprisingly effective for stress reduction.",
+"Do a quick digital detox. Disconnect from screens for an hour and see if your brain feels refreshed and ready to tackle the issue.",
+"Maybe the solution involves saying no. Don't be afraid to set boundaries and prioritize your well-being.",
+"Write down a list of your strengths and skills. Remind yourself of what you're capable of overcoming.",
+"Break the problem down into a flow chart. Visualizing the steps can make it feel less overwhelming.",
+"Do a quick online happiness quiz. Maybe boosting your mood can lead to a more creative approach to the problem.",
+"Listen to a motivational speech. Hearing someone else's success story can inspire you to tackle your own challenges.",
+"Maybe the answer lies in helping a stranger. Random acts of kindness can boost your mood and shift your perspective.",
+"Organize a potluck with friends. Sharing a meal and conversation can be surprisingly helpful for problem-solving.",
+"Do some online research. There's a good chance someone else has faced a similar problem and found a solution.",
+"Maybe the answer lies in letting go. If it's something you can't control, accept it and focus on what you can.",
+"Practice active listening with a friend or colleague. Sometimes simply being heard can lead to clarity and solutions.",
+"Do a quick online brain training game. Sharpen your mental skills and see if it sparks some creative problem-solving ideas.",
+"Challenge yourself to learn a new word every day. Expanding your vocabulary can lead to new ways of thinking about the problem.",
+"Do some doodling or freehand drawing. Sometimes letting your subconscious mind express itself can lead to unexpected solutions.",
+"Maybe the answer lies in saying sorry. If you've contributed to the problem, take responsibility and apologize.",
+"Organize a game night with friends. Taking a break with some fun can lead to a refreshed perspective later.",
+"Do some online research on famous historical problem-solvers. Maybe their stories can inspire you to tackle your own challenge.",
   ];
 		var randomNumber2 = Math.floor(Math.random()*textArray2.length);
     const solvething = interaction.options.getString('problem');
@@ -300,4 +367,4 @@ client.on('interactionCreate', async interaction => {
 });
 
 // Login to Discord with your client's token
-client.login(token);
+client.login(process.env.TOKEN);

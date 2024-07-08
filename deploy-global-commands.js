@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, Routes } = require('discord.js');
 const { REST } = require('@discordjs/rest');
-const { clientId, guildId, token } = require('./config.json');
+const dotenv = require('dotenv');
+dotenv.config();
 //this part of the code makes the commands visible on the guild server, a bit of code editing should make it go globle, but it can have a delay of up to one hour
 const commands = [
     new SlashCommandBuilder().setName('sacramento').setDescription('Replies with a fact about Sacramento (source Wikipedia, AI) (it might not be true tho)'),
@@ -12,8 +13,8 @@ const commands = [
 ]
 	.map(command => command.toJSON());
 
-const rest = new REST({ version: '10' }).setToken(token);
+const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 
-rest.put(Routes.applicationCommands(clientId), { body: commands })
+rest.put(Routes.applicationCommands(process.env.CID), { body: commands })
 	.then(() => console.log('Successfully registered application commands.'))
 	.catch(console.error);

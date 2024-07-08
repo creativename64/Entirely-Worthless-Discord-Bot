@@ -10,6 +10,7 @@ const commands = [
     new SlashCommandBuilder().setName('interactiontest').setDescription('A test for string passthough (beta)').addStringOption(option => option.setName('textinput').setDescription('with any luck it will return what you type here back at you').setRequired(true)),
     new SlashCommandBuilder().setName('ping').setDescription('Replies with Pong! (beta)'),
 	new SlashCommandBuilder().setName('spotify').setDescription('random spotify song (beta)'),
+	new SlashCommandBuilder().setName('blackjack').setDescription('play blackjack (beta)'),
 ]
 	.map(command => command.toJSON());
 

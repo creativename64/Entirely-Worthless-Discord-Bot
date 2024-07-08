@@ -496,6 +496,89 @@ client.on('interactionCreate', async interaction => {
 		await interaction.reply(`the user asked "${solvething2}", the spirits say: ${textArray3[randomNumber3]}`);
 	} else if (commandName === 'sorry-darrell') {
 		await interaction.reply('I would like to apologize on behalf of myself for selecting darrell as the subject of mockery via this bot, he is quite bassed and is working to ban guns in the states and stuff. Please dont use this bot as a political statement and the next time I pick a random cishet white male mayor to mock I will be sure to make sure they kinda suck.');
+	} else if (commandName === 'blackjack') {
+		var dealer1suit = Math.floor(Math.random(4));
+		var dealer2suit = Math.floor(Math.random(4));
+		var player1suit = Math.floor(Math.random(4));
+		var player2suit = Math.floor(Math.random(4));
+		var player3suit = Math.floor(Math.random(4));
+		var dealerscore = 0;
+		var playerscore = 0;
+		var deckheart = [
+			'Ace',
+			'1',
+			'2',
+			'3',
+			'4',
+			'5',
+			'6',
+			'7',
+			'8',
+			'9',
+			'10',
+			'J',
+			'Q',
+			'K'
+		];
+		var deckdiamond = [
+			'Ace',
+			'1',
+			'2',
+			'3',
+			'4',
+			'5',
+			'6',
+			'7',
+			'8',
+			'9',
+			'10',
+			'J',
+			'Q',
+			'K'
+		];
+		var deckspade = [
+			'Ace',
+			'1',
+			'2',
+			'3',
+			'4',
+			'5',
+			'6',
+			'7',
+			'8',
+			'9',
+			'10',
+			'J',
+			'Q',
+			'K'
+		];
+		var deckclub = [
+			'Ace',
+			'1',
+			'2',
+			'3',
+			'4',
+			'5',
+			'6',
+			'7',
+			'8',
+			'9',
+			'10',
+			'J',
+			'Q',
+			'K'
+		];
+		if (dealer1suit = 1) {
+			var dealer1cardn = Math.floor(Math.random()*deckheart.length)+(' of hearts');
+			var dealer1card = deckheart[dealer1cardn];
+		} else if (dealer1suit = 2) {
+			var dealer1card = Math.floor(Math.random()*deckdiamond.length)+(' of diamonds');
+		} else if (dealer1suit = 3) {
+			var dealer1card = Math.floor(Math.random()*deckspade.length)+(' of spades');
+		} else if (dealer1suit = 4) {
+			var dealer1card = Math.floor(Math.random()*deckclub.length)+(' of clubs')
+		};
+		await interaction.reply(dealer1card)
 	}
 });
 

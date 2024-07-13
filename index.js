@@ -497,13 +497,14 @@ client.on('interactionCreate', async interaction => {
 	} else if (commandName === 'sorry-darrell') {
 		await interaction.reply('I would like to apologize on behalf of myself for selecting darrell as the subject of mockery via this bot, he is quite bassed and is working to ban guns in the states and stuff. Please dont use this bot as a political statement and the next time I pick a random cishet white male mayor to mock I will be sure to make sure they kinda suck.');
 	} else if (commandName === 'blackjack') {
-		var dealer1suit = Math.floor(Math.random(4));
+		var dealer1suit = Math.floor(Math.random()*3);
 		var dealer2suit = Math.floor(Math.random(4));
 		var player1suit = Math.floor(Math.random(4));
 		var player2suit = Math.floor(Math.random(4));
 		var player3suit = Math.floor(Math.random(4));
 		var dealerscore = 0;
 		var playerscore = 0;
+		console.log(dealer1suit)
 		var deckheart = [
 			'Ace',
 			'1',
@@ -568,17 +569,18 @@ client.on('interactionCreate', async interaction => {
 			'Q',
 			'K'
 		];
-		if (dealer1suit = 1) {
+		var dealer1card = 'that right there is is the problem';
+		if (dealer1suit === 0) {
 			var dealer1cardn = Math.floor(Math.random()*deckheart.length)+(' of hearts');
 			var dealer1card = deckheart[dealer1cardn];
-		} else if (dealer1suit = 2) {
+		} else if (dealer1suit === 1) {
 			var dealer1card = Math.floor(Math.random()*deckdiamond.length)+(' of diamonds');
-		} else if (dealer1suit = 3) {
+		} else if (dealer1suit === 2) {
 			var dealer1card = Math.floor(Math.random()*deckspade.length)+(' of spades');
-		} else if (dealer1suit = 4) {
+		} else if (dealer1suit === 3) {
 			var dealer1card = Math.floor(Math.random()*deckclub.length)+(' of clubs')
-		};
-		await interaction.reply(dealer1card)
+		} else (dealer1card = 'error');
+		await interaction.reply(`hey hey it's "${dealer1card}"`);
 	}
 });
 
